@@ -1,6 +1,5 @@
-const router=require('express').Router()
-const {index}=require('../controllers/helloController.json')
+const chalk = require('chalk');  
+const boxen = require('boxen');
 
-router.get('/',index())
-
-module.exports=router;
+const usage = chalk.hex('#83aaff')("\\nUsage: tran <lang\_name> sentence to be translated");
+console.log(usage)

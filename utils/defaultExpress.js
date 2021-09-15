@@ -2,6 +2,8 @@ const fs=require('fs/promises')
 const path=require('path')
 const process=require('process')
 const { exec } = require('child_process');
+const chalk = require('chalk');  
+const boxen = require('boxen');
 
 
 module.exports={
@@ -148,11 +150,22 @@ module.exports={
 
         
         
+        }).then(()=>{
+
+            // Output info
+           setTimeout(() => {
+            console.log( chalk.hex('#AFFDDB')(`${FOLDER_NAME} created successfully`))
+            console.log(chalk.hex('#AFFDDB')(`cd ${FOLDER_NAME}`))
+            console.log( chalk.hex('#AFFDDB')(`npm install`))
+            console.log(chalk.hex('#AFFDDB')(`npm start`))
+            
+           }, 2000);
         }).catch(err=>{
 
             // 1N print error if main folder wasnt successful
             console.log(err)
-            console.log('ERROR: Boilerplate not created')
+            const er = chalk.hex('#FF0000')('ERROR: Boilerplate not created');
+            console.log(er)
 
         })
     }

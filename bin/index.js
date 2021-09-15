@@ -7,7 +7,7 @@ const { option } = require("yargs");
 const {create}=require('../utils/defaultExpress')
 
 const options = yargs
- .usage("Usage: create default")
+ .usage("Usage: Create Express Boilerplate")
  .option("c", { alias: "create", describe: "Generate a default standalone express boilerplate", type: "string", demandOption: true , })
  .argv
 if(options.create!=="" || options.create!==null){
