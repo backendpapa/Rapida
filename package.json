@@ -1,0 +1,32 @@
+{
+  "name": "rapida",
+  "version": "1.0.4",
+  "description": "",
+  "main": "./bin/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/backendpapa/Rapida.git"
+  },
+  "bin": {
+    "rapida": "./bin/index.js"
+  },
+  "keywords": [
+    "express",
+    "expressjs",
+    "node",
+    "nodejs"
+  ],
+  "author": "Your Name <papabackend@gmail.com> (http://backendpapa.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/backendpapa/Rapida/issues"
+  },
+  "homepage": "https://github.com/backendpapa/Rapida#readme",
+  "dependencies": {
+    "yarg": "^1.0.8",
+    "yargs": "^17.1.1"
+  }
+}
