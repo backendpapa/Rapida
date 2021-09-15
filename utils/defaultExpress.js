@@ -27,8 +27,26 @@ module.exports={
         }).then(()=>{
 
             // 3 Run npm init default
+            let defaultPackage=`{
+                "name": "${FOLDER_NAME}",
+                "version": "1.0.0",
+                "description": "",
+                "main": "index.js",
+                "scripts": {
+                  "test": "echo Error: no test specified && exit 1",
+                  "start":"node index.js"
+                },
+                "keywords": [],
+                "author": "",
+                "license": "ISC",
+                "dependencies": {
+                  "cors": "^2.8.5",
+                  "express": "^4.17.1"
+                }
+              }`.toString()
+              
             
-            exec('npm init -y', (err, stdout, stderr) => {
+            exec(`touch package.json && echo '${defaultPackage}'  > package.json`, (err, stdout, stderr) => {
 
                 if(err){
 
@@ -90,7 +108,8 @@ module.exports={
             })
         }).then(()=>{
 
-            exec('mkdir controllers routes',(err,stdout,stderr)=>{
+            // Make directory for routes and controllers
+            exec('mkdir controllers routes && touch ./controllers/helloController.js && touch ./routes/hello.js',(err,stdout,stderr)=>{
 
                 if(err){
                     
@@ -100,9 +119,35 @@ module.exports={
                     console.log(err)
                     process.exit(0)
                 }else{
-                    console.log(stdout)
+                    console.log(path.join(process.cwd(),'controllers'))
+                    console.log(path.join(process.cwd(),'routes'))
+                    console.log(path.join(process.cwd(),'controllers','helloController.js'))
+                    console.log(path.join(process.cwd(),'routes','hello.js'))
                 }
             })
+        }).then(()=>{
+
+            // Add boilerplate to controller
+            exec(`cat ${path.join(__dirname,'controllerDefault.txt')} > ./controllers/helloController.js && cat ${path.join(__dirname,'routeDefault.txt')} >./routes/hello.js`,(err,stdout,stderr)=>{
+                if(err){
+
+                    throw err;
+                    
+                }else if(stderr!==""){
+
+                    console.log(stderr)
+                    process.exit(1)
+
+                }else{
+
+                    console.log(stdout)
+
+                }
+
+            })
+
+        
+        
         }).catch(err=>{
 
             // 1N print error if main folder wasnt successful

@@ -10,7 +10,7 @@
     <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" />
   </a>
   <a href="https://github.com/backendpapa/Rapida/blob/master/LICENSE" target="_blank">
-    <img alt="License: MIT" src="https://img.shields.io/github/license/backendpapa/rapida" />
+    <img alt="License: ISC" src="https://img.shields.io/github/license/backendpapa/rapida" />
   </a>
   <a href="https://twitter.com/backendpapa" target="_blank">
     <img alt="Twitter: backendpapa" src="https://img.shields.io/twitter/follow/backendpapa.svg?style=social" />
@@ -32,6 +32,12 @@ npm install -g rapida
 ```sh
 npm run test
 ```
+## Usage
+
+```sh
+rapida --create <app name>
+```
+
 
 ## Author
 
@@ -52,5 +58,5 @@ Give a ⭐️ if this project helped you!
 ## 📝 License
 
 Copyright © 2021 [Akeju Paul](https://github.com/backendpapa).<br />
-This project is [MIT](https://github.com/backendpapa/Rapida/blob/master/LICENSE) licensed.
+This project is [ISC](https://github.com/backendpapa/Rapida/blob/master/LICENSE) licensed.
 
