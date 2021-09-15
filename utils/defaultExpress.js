@@ -66,7 +66,8 @@ module.exports={
                     process.exit(1)
 
                 }else{
-
+                    
+                    // Copy content into index.js
                     exec(`cat ${path.join(__dirname,'dindex.txt')} >index.js`,(err,stdout,stderr)=>{
                         if(err){
 
@@ -78,7 +79,9 @@ module.exports={
                             process.exit(1)
 
                         }else{
+
                             console.log(stdout)
+
                         }
 
                     })
@@ -87,6 +90,19 @@ module.exports={
             })
         }).then(()=>{
 
+            exec('mkdir controllers routes',(err,stdout,stderr)=>{
+
+                if(err){
+                    
+                    throw err;
+
+                }else if(stderr!==""){
+                    console.log(err)
+                    process.exit(0)
+                }else{
+                    console.log(stdout)
+                }
+            })
         }).catch(err=>{
 
             // 1N print error if main folder wasnt successful

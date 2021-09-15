@@ -4,9 +4,12 @@ const cors=require('cors')
 const port =process.env.PORT ||LOCAL_PORT 
 const app=express()
 
+const helloRoute=require('./routes/hello.js')
+
 app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
+
 
 
 app.get('/',(req,res)=>{
